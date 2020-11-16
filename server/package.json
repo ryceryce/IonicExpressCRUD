@@ -1,0 +1,18 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "Server Express for retrieving data from database",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "ryceryce",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "md5": "^2.3.0",
+        "sqlite": "^4.0.17",
+        "sqlite3": "^5.0.0"
+    }
+}
