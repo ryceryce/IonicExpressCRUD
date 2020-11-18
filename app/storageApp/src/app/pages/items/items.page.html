@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>All Items</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item>
+            <ion-card-title>All Data</ion-card-title>
+            <ion-button (click)="alertNew()" slot="end" shape="round">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <ion-item class="padding-bottom" *ngFor="let item of (items | async)?.data">
+            <ion-label class="ion-text-capitalize">{{item.item}}</ion-label>
+            <ion-label>{{item.amount}}</ion-label>
+            <ion-buttons slot="end">
+                <ion-button color="secondary" (click)="doUpdate(item)" fill="solid" shape="round">
+                    <ion-icon name="create"></ion-icon>
+                </ion-button>
+                <ion-button color="danger" (click)="doDelete(item)" fill="solid" shape="round">
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+    </ion-card>
+
+</ion-content>

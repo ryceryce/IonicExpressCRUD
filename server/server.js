@@ -1,8 +1,11 @@
 var express = require("express");
-var app = express();
+var cors = require("cors");
 var db = require("./database.js");
 var bodyParser = require("body-parser");
 
+var app = express();
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -21,7 +24,7 @@ app.get("/", (req, res, next) => {
 
 // Get All Data
 app.get("/items", (req, res, next) => {
-    var sql = "SELECT * FROM items";
+    var sql = "SELECT * FROM items ORDER BY item ASC";
     var params = [];
 
     db.all(sql, params, (err, rows) => {
