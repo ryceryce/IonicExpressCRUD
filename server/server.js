@@ -92,7 +92,7 @@ app.post("/new", (req, res, next) => {
 });
 
 //Update data
-app.patch("/items/:id", (req, res, next) => {
+app.put("/items/:id", (req, res, next) => {
     var ts = Date.now();
     var date_ob = new Date(ts);
     var date = date_ob.getDate();
